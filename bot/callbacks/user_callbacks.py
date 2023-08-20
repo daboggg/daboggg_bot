@@ -12,6 +12,7 @@ async def cb_year(call: types.CallbackQuery):
     reply_text = f'Выбран год: {storage["year"]}\n'
     reply_text+='Выбери месяц'
     await call.message.answer(text=reply_text, reply_markup=get_month_kb())
+    await call.answer()
 
 
 async def cb_month(call: types.CallbackQuery):
@@ -20,6 +21,7 @@ async def cb_month(call: types.CallbackQuery):
     reply_text += f'Выбран месяц: {storage["month"]}\n'
     reply_text += 'Выбери день'
     await call.message.answer(text=reply_text, reply_markup=get_day_kb())
+    await call.answer()
 
 
 async def cb_day(call: types.CallbackQuery):
@@ -29,6 +31,7 @@ async def cb_day(call: types.CallbackQuery):
     reply_text += f'Выбран день: {storage["day"]}\n'
     reply_text += 'Выберете период'
     await call.message.answer(text=reply_text, reply_markup=get_period_kb())
+    await call.answer()
 
 
 async def cb_period(call: types.CallbackQuery):
@@ -40,6 +43,7 @@ async def cb_period(call: types.CallbackQuery):
     d = format_date(d,locale='ru', format='dd MMMM YYYY')
     reply_text = f'Продажа на {d} открывается {date_of_purchase} (за {storage["period"]} дней)'
     await call.message.answer(text=reply_text)
+    await call.answer()
 
 
 def register_user_callbacks(dp: Dispatcher) -> None:
