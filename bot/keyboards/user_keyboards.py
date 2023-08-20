@@ -1,6 +1,10 @@
-from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from datetime import date
 from bot.storage import storage
+
+
+def get_start_kb()-> ReplyKeyboardMarkup:
+    return ReplyKeyboardMarkup().add(KeyboardButton('/start'))
 
 
 def get_main_kb() -> InlineKeyboardMarkup:
