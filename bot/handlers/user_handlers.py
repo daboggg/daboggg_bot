@@ -13,11 +13,11 @@ async def cmd_start(msg: types.Message) -> None:
     """
     global storage
     storage = {}
-    reply_text = f'Привет, {msg.from_user.first_name}\n'
-    reply_text += f'Выбери год'
+    reply_text1 = f'Привет, {msg.from_user.first_name}\n'
+    reply_text2 = 'Выбери год'
 
-    await msg.answer(text=reply_text, reply_markup=get_years_kb())
-    await msg.answer(text='', reply_markup=get_start_kb())
+    await msg.answer(text=reply_text1,reply_markup=get_start_kb())
+    await msg.answer(text=reply_text2, reply_markup=get_years_kb())
 
 
 def register_user_handlers(dp: Dispatcher) -> None:

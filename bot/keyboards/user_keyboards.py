@@ -4,7 +4,7 @@ from bot.storage import storage
 
 
 def get_start_kb()-> ReplyKeyboardMarkup:
-    return ReplyKeyboardMarkup().add(KeyboardButton('/start'))
+    return ReplyKeyboardMarkup(resize_keyboard=True).add(KeyboardButton('/start'))
 
 
 def get_main_kb() -> InlineKeyboardMarkup:
